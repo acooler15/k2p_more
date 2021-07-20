@@ -16,3 +16,6 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+[ -d "$GITHUB_WORKSPACE/patch" ] && cp -rf $GITHUB_WORKSPACE/patch ./ && git am ./patch/

@@ -1,0 +1,22 @@
+From ec0d37c58c74b9566742850539cbecb09232b776 Mon Sep 17 00:00:00 2001
+From: acooler15 <acooler15>
+Date: Sun, 25 Jul 2021 07:59:59 +0800
+Subject: [PATCH 2/2] add helloworld feeds
+
+---
+ feeds.conf.default | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/feeds.conf.default b/feeds.conf.default
+index 416da4b0c..d77757295 100644
+--- a/feeds.conf.default
++++ b/feeds.conf.default
+@@ -6,3 +6,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
+ #src-git targets https://github.com/openwrt/targets.git
+ #src-git oldpackages http://git.openwrt.org/packages.git
+ #src-link custom /usr/src/openwrt/custom-feed
++src-git helloworld https://github.com/fw876/helloworld
+\ No newline at end of file
+-- 
+2.25.1
+

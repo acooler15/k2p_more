@@ -1,0 +1,47 @@
+From eaf32b9cb7716d8e3bfb985e0ccad4a8baecc79c Mon Sep 17 00:00:00 2001
+From: acooler15 <acooler15>
+Date: Sun, 25 Jul 2021 07:59:46 +0800
+Subject: [PATCH 1/2] change k2p for 32M
+
+---
+ target/linux/ramips/dts/mt7621_phicomm_k2p.dts | 3 ++-
+ target/linux/ramips/image/mt7621.mk            | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/target/linux/ramips/dts/mt7621_phicomm_k2p.dts b/target/linux/ramips/dts/mt7621_phicomm_k2p.dts
+index ec24c713e..f1bad305a 100644
+--- a/target/linux/ramips/dts/mt7621_phicomm_k2p.dts
++++ b/target/linux/ramips/dts/mt7621_phicomm_k2p.dts
+@@ -51,6 +51,7 @@
+ 		compatible = "jedec,spi-nor";
+ 		reg = <0>;
+ 		spi-max-frequency = <80000000>;
++		broken-flash-reset;
+ 		m25p,fast-read;
+ 
+ 		partitions {
+@@ -85,7 +86,7 @@
+ 			partition@a0000 {
+ 				compatible = "denx,uimage";
+ 				label = "firmware";
+-				reg = <0xa0000 0xf60000>;
++				reg = <0xa0000 0x1fb0000>;
+ 			};
+ 		};
+ 	};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 83df9b1b6..3971ca8c8 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -1152,7 +1152,7 @@ TARGET_DEVICES += netis_wf2881
+ 
+ define Device/phicomm_k2p
+   $(Device/dsa-migration)
+-  IMAGE_SIZE := 15744k
++  IMAGE_SIZE := 32448k
+   DEVICE_VENDOR := Phicomm
+   DEVICE_MODEL := K2P
+   SUPPORTED_DEVICES += k2p
+-- 
+2.25.1
+
